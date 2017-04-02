@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="UtilityDelta.Server.Endpoint.Service" CodeBehind="Service.svc.cs" %>

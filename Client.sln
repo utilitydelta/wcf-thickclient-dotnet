@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.10
+VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Client.UI", "UtilityDelta.Client.UI\UtilityDelta.Client.UI.csproj", "{26B047AD-D0F2-417D-8B7A-AA1039BE34C6}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Shared.Dto", "UtilityDelta.Shared.Dto\UtilityDelta.Shared.Dto.csproj", "{E4253336-E30E-493D-96F9-100A69645E4E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Shared.Common", "UtilityDelta.Shared.Common\UtilityDelta.Shared.Common.csproj", "{823BA2C1-1A3A-4D95-A4F4-368082277548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Client.Test", "UtilityDelta.Client.Test\UtilityDelta.Client.Test.csproj", "{D079D4D6-781D-4351-ACF4-46FC0F99DFDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D079D4D6-781D-4351-ACF4-46FC0F99DFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D079D4D6-781D-4351-ACF4-46FC0F99DFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D079D4D6-781D-4351-ACF4-46FC0F99DFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D079D4D6-781D-4351-ACF4-46FC0F99DFDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
