@@ -6,7 +6,7 @@ using UtilityDelta.Shared.Interface;
 namespace UtilityDelta.Client.Test
 {
     [TestClass]
-    public class TestIDynamicProxyBuilder
+    public class TestDynamicProxyBuilder
     {
         [TestMethod]
         public void TestAllServiceInterfacesCanCompileProxy()
