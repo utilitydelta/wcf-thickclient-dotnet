@@ -16,24 +16,27 @@ namespace UtilityDelta.Server.Domain
 
         public async Task<DtoPerformOperationResult> PerformOperation(DtoPerformOperation dtoIn)
         {
-            var result = new DtoPerformOperationResult
+            return await Task.Run(() =>
             {
-                ExecutedBy = await m_userService.GetCurrentUserName()
-            };
+                var result = new DtoPerformOperationResult
+                {
+                    ExecutedBy = m_userService.UserName
+                };
 
-            switch (dtoIn.OperationType)
-            {
-                case EnumOperationType.Add:
-                    result.Result = dtoIn.NumberOne + dtoIn.NumberTwo;
-                    break;
-                case EnumOperationType.Subtract:
-                    result.Result = dtoIn.NumberOne - dtoIn.NumberTwo;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                switch (dtoIn.OperationType)
+                {
+                    case EnumOperationType.Add:
+                        result.Result = dtoIn.NumberOne + dtoIn.NumberTwo;
+                        break;
+                    case EnumOperationType.Subtract:
+                        result.Result = dtoIn.NumberOne - dtoIn.NumberTwo;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
 
-            return result;
+                return result;
+            });
         }
     }
 }

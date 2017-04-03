@@ -10,7 +10,7 @@ namespace UtilityDelta.Server.Test
         [TestMethod]
         public async Task TestAuthenticationFail()
         {
-            var service = new UserService("admin");
+            var service = new UserService();
             var authResult = await service.CheckCredentials("admin", "password123");
             Assert.IsFalse(authResult);
         }
@@ -18,16 +18,17 @@ namespace UtilityDelta.Server.Test
         [TestMethod]
         public async Task TestAuthenticationPass()
         {
-            var service = new UserService("admin");
+            var service = new UserService();
             var authResult = await service.CheckCredentials("admin", "password");
             Assert.IsTrue(authResult);
         }
 
         [TestMethod]
-        public async Task TestCurrentUser()
+        public void TestCurrentUser()
         {
-            var service = new UserService("blah");
-            Assert.AreEqual(await service.GetCurrentUserName(), "blah");
+            var service = new UserService();
+            service.UserName = "blah";
+            Assert.AreEqual(service.UserName, "blah");
         }
     }
 }

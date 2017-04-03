@@ -14,7 +14,7 @@ namespace UtilityDelta.Server.Test
         public async Task TestAdd()
         {
             var userService = new Mock<IUserService>();
-            userService.Setup(x => x.GetCurrentUserName()).ReturnsAsync(() => "testUser");
+            userService.Setup(x => x.UserName).Returns(() => "testUser");
 
             var service = new TestService(userService.Object);
             var result = await service.PerformOperation(new DtoPerformOperation
@@ -32,7 +32,7 @@ namespace UtilityDelta.Server.Test
         public async Task TestSubtract()
         {
             var userService = new Mock<IUserService>();
-            userService.Setup(x => x.GetCurrentUserName()).ReturnsAsync(() => "testUser");
+            userService.Setup(x => x.UserName).Returns(() => "testUser");
 
             var service = new TestService(userService.Object);
             var result = await service.PerformOperation(new DtoPerformOperation
