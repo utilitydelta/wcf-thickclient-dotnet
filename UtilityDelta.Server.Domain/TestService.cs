@@ -2,10 +2,11 @@
 using System.Threading.Tasks;
 using UtilityDelta.Shared.Common;
 using UtilityDelta.Shared.Dto;
+using UtilityDelta.Shared.Interface;
 
 namespace UtilityDelta.Server.Domain
 {
-    public class TestService
+    public class TestService : ITestService
     {
         private readonly IUserService m_userService;
 

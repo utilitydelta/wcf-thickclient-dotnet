@@ -6,10 +6,6 @@ namespace UtilityDelta.Server.Domain
     {
         public string UserName { get; set; }
 
-        public UserService()
-        {
-        }
-
         public async Task<bool> CheckCredentials(string userName, string password)
         {
             //TODO: Replace this with your authentication routine

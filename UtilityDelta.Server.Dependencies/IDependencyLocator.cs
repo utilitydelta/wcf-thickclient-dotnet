@@ -8,7 +8,7 @@ namespace UtilityDelta.Server.Dependencies
     public interface IDependencyLocator : IDisposable
     {
         /// <summary>
-        /// Get an instance of a concrete class with a provided interface
+        ///     Get an instance of a concrete class with a provided interface
         /// </summary>
         /// <typeparam name="T">Interface to get concrete class for</typeparam>
         /// <returns></returns>
