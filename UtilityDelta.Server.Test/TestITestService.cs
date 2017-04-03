@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using log4net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using UtilityDelta.Server.Domain;
@@ -13,10 +14,12 @@ namespace UtilityDelta.Server.Test
         [TestMethod]
         public async Task TestAdd()
         {
+            var log = new Mock<ILog>();
+
             var userService = new Mock<IUserService>();
             userService.Setup(x => x.UserName).Returns(() => "testUser");
 
-            var service = new TestService(userService.Object);
+            var service = new TestService(userService.Object, log.Object);
             var result = await service.PerformOperation(new DtoPerformOperation
             {
                 NumberOne = 22,
@@ -31,10 +34,12 @@ namespace UtilityDelta.Server.Test
         [TestMethod]
         public async Task TestSubtract()
         {
+            var log = new Mock<ILog>();
+
             var userService = new Mock<IUserService>();
             userService.Setup(x => x.UserName).Returns(() => "testUser");
 
-            var service = new TestService(userService.Object);
+            var service = new TestService(userService.Object, log.Object);
             var result = await service.PerformOperation(new DtoPerformOperation
             {
                 NumberOne = 22,

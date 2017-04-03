@@ -1,5 +1,7 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using UtilityDelta.Server.Domain;
+using UtilityDelta.Shared.Common;
 
 namespace UtilityDelta.Server.Dependencies
 {
@@ -11,7 +13,10 @@ namespace UtilityDelta.Server.Dependencies
         {
             var builder = new ContainerBuilder();
 
-            //Register types
+            builder.RegisterModule(new LoggingModule());
+            builder.RegisterType<Serializer>()
+                .AsImplementedInterfaces()
+                .SingleInstance();
             builder.RegisterAssemblyTypes(typeof(TestService).Assembly)
                 .AsImplementedInterfaces()
                 .SingleInstance();
@@ -22,5 +27,7 @@ namespace UtilityDelta.Server.Dependencies
         public void Dispose() => m_scope?.Dispose();
 
         public T GetService<T>() => m_scope.Resolve<T>();
+
+        public object GetService(Type type) => m_scope.Resolve(type);
     }
 }

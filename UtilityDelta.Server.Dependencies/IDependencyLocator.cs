@@ -13,5 +13,7 @@ namespace UtilityDelta.Server.Dependencies
         /// <typeparam name="T">Interface to get concrete class for</typeparam>
         /// <returns></returns>
         T GetService<T>();
+
+        object GetService(Type type);
     }
 }
