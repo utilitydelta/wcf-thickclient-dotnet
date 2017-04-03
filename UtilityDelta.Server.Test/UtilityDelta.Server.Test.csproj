@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B69BEE14-55DD-4C3D-AE04-0619E26C339C}</ProjectGuid>
+    <ProjectGuid>{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UtilityDelta.Server.Test</RootNamespace>
@@ -38,21 +38,42 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Moq, Version=4.7.8.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.7.8\lib\net45\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestITestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestIUserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilityDelta.Server.Domain\UtilityDelta.Server.Domain.csproj">
+      <Project>{C0198967-4A1B-4340-AAF7-45880238DE4C}</Project>
+      <Name>UtilityDelta.Server.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDelta.Shared.Common\UtilityDelta.Shared.Common.csproj">
+      <Project>{823BA2C1-1A3A-4D95-A4F4-368082277548}</Project>
+      <Name>UtilityDelta.Shared.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDelta.Shared.Dto\UtilityDelta.Shared.Dto.csproj">
+      <Project>{E4253336-E30E-493D-96F9-100A69645E4E}</Project>
+      <Name>UtilityDelta.Shared.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

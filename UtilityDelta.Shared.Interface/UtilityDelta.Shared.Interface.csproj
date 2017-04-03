@@ -40,7 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ITestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilityDelta.Shared.Dto\UtilityDelta.Shared.Dto.csproj">
+      <Project>{E4253336-E30E-493D-96F9-100A69645E4E}</Project>
+      <Name>UtilityDelta.Shared.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

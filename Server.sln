@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Shared.Dto", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Shared.Common", "UtilityDelta.Shared.Common\UtilityDelta.Shared.Common.csproj", "{823BA2C1-1A3A-4D95-A4F4-368082277548}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Server.Test", "UtilityDelta.Server.Test\UtilityDelta.Server.Test.csproj", "{B69BEE14-55DD-4C3D-AE04-0619E26C339C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityDelta.Server.Test", "UtilityDelta.Server.Test\UtilityDelta.Server.Test.csproj", "{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{823BA2C1-1A3A-4D95-A4F4-368082277548}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B69BEE14-55DD-4C3D-AE04-0619E26C339C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B69BEE14-55DD-4C3D-AE04-0619E26C339C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B69BEE14-55DD-4C3D-AE04-0619E26C339C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B69BEE14-55DD-4C3D-AE04-0619E26C339C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE3CA38-CFEF-40E4-93FB-61D12EE186E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
