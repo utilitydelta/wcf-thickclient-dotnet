@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +42,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DynamicProxyBuilder.cs" />
+    <Compile Include="DynamicProxyCache.cs" />
+    <Compile Include="IDynamicProxyBuilder.cs" />
+    <Compile Include="IDynamicProxyCache.cs" />
+    <Compile Include="IProcessService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\ServiceReference\Service.wsdl" />
+    <None Include="Connected Services\ServiceReference\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference\UtilityDelta.Client.ServiceLocator.ServiceReference.ServiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilityDelta.Shared.Common\UtilityDelta.Shared.Common.csproj">
+      <Project>{823ba2c1-1a3a-4d95-a4f4-368082277548}</Project>
+      <Name>UtilityDelta.Shared.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDelta.Shared.Dto\UtilityDelta.Shared.Dto.csproj">
+      <Project>{e4253336-e30e-493d-96f9-100a69645e4e}</Project>
+      <Name>UtilityDelta.Shared.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDelta.Shared.Interface\UtilityDelta.Shared.Interface.csproj">
+      <Project>{b502f4b2-2866-4b08-9d9d-9f25e93a96f1}</Project>
+      <Name>UtilityDelta.Shared.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,11 +48,21 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="TestIDynamicProxyBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UtilityDelta.Client.ServiceLocator\UtilityDelta.Client.ServiceLocator.csproj">
+      <Project>{0C77439C-DB14-4F7A-88DB-029DBFCFC4EF}</Project>
+      <Name>UtilityDelta.Client.ServiceLocator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UtilityDelta.Shared.Interface\UtilityDelta.Shared.Interface.csproj">
+      <Project>{B502F4B2-2866-4B08-9D9D-9F25E93A96F1}</Project>
+      <Name>UtilityDelta.Shared.Interface</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
