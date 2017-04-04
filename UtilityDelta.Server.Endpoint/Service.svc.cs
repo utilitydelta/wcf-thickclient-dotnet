@@ -31,8 +31,6 @@ namespace UtilityDelta.Server.Endpoint
         private static readonly log4net.ILog m_log =
             log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
-        private const string NettcpProtocol = "net.tcp://";
-        private const string UsernameEndpoint = "/Service/Service.svc/username";
         private const string UserNameCustomBinding = "UserNameCustomBinding";
         private const string CertificateThumbprintSetting = "CertificateThumbprint";
         private const string Log4NetConfigSetting = "log4net_config";
@@ -55,13 +53,13 @@ namespace UtilityDelta.Server.Endpoint
         {
             Log4NetSetup();
 
-                var appServerUrl = Dns.GetHostEntry(Environment.MachineName).HostName;
+            var appServerUrl = Dns.GetHostEntry(Environment.MachineName).HostName;
             var contractDesc = ContractDescription.GetContract(typeof(IService));
 
             var usernameEndpoint = new ServiceEndpoint(
                             contractDesc,
                             new CustomBinding(UserNameCustomBinding),
-                            new EndpointAddress($"{NettcpProtocol}{appServerUrl}{UsernameEndpoint}"));
+                            new EndpointAddress($"{ServiceConstants.NettcpProtocol}{appServerUrl}{ServiceConstants.UsernameEndpoint}"));
 
             foreach (var op in usernameEndpoint.Contract.Operations)
             {
@@ -128,7 +126,7 @@ namespace UtilityDelta.Server.Endpoint
                     //Set current username for services
                     var userService = dependencyLocator.GetService<IUserService>();
                     userService.UserName = OperationContext.Current.ServiceSecurityContext.PrimaryIdentity.Name;
-                    
+
                     var resultFromImplementation = await ExecuteServiceCall(request, dependencyLocator);
                     if (resultFromImplementation != null)
                     {

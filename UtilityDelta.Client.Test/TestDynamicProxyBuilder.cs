@@ -19,7 +19,6 @@ namespace UtilityDelta.Client.Test
                 Assert.AreEqual(proxyType.GetInterfaces().Length, 1);
                 Assert.AreEqual(proxyType.GetInterfaces()[0].FullName, type.FullName);
             }
-
         }
     }
 }

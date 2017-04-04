@@ -1,20 +1,17 @@
 ﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Microsoft.CSharp;
+using UtilityDelta.Shared.Dto;
+using UtilityDelta.Shared.Interface;
 
 namespace UtilityDelta.Client.ServiceLocator
 {
     public class DynamicProxyBuilder : IDynamicProxyBuilder
     {
-        private const string DotNetSystem = "System.dll";
-        private const string SharedDtoAssembliesPostfix = "Shared.Dto";
-        private const string SharedInterfaceAssembliesPostfix = "Shared.Interface";
-
         public Type BuildProxy(Type classToProxy, string proxyName)
         {
             var interfaceClassFullName = classToProxy.FullName;
@@ -54,7 +51,7 @@ namespace UtilityDelta.Client.ServiceLocator
             sourceCode.AppendLine($"public class {proxyClassName} : {interfaceClass.FullName}");
             sourceCode.AppendLine("{");
 
-            var processor = typeof(IProcessService).FullName;
+            var processor = typeof(IServiceWrapper).FullName;
             //Dependancy injected service wrapper
             sourceCode.AppendLine($"    private readonly {processor} _service;");
 
@@ -85,12 +82,12 @@ namespace UtilityDelta.Client.ServiceLocator
         {
             var result = new List<string>
             {
-                DotNetSystem,
+                typeof(Type).Assembly.Location,
                 typeof(DataContractAttribute).Assembly.Location,
                 typeof(ActionNotSupportedException).Assembly.Location,
-                typeof(IProcessService).Assembly.Location,
-                typeof(UtilityDelta.Shared.Dto.DtoPerformOperation).Assembly.Location,
-                typeof(UtilityDelta.Shared.Interface.ITestService).Assembly.Location,
+                typeof(IServiceWrapper).Assembly.Location,
+                typeof(DtoPerformOperation).Assembly.Location,
+                typeof(ITestService).Assembly.Location
             };
 
             return result;

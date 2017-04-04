@@ -51,7 +51,9 @@
     <Compile Include="DynamicProxyCache.cs" />
     <Compile Include="IDynamicProxyBuilder.cs" />
     <Compile Include="IDynamicProxyCache.cs" />
-    <Compile Include="IProcessService.cs" />
+    <Compile Include="IServiceWrapper.cs" />
+    <Compile Include="IServer.cs" />
+    <Compile Include="ServiceWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

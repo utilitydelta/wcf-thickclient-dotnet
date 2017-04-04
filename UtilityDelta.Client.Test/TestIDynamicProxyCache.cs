@@ -14,7 +14,7 @@ namespace UtilityDelta.Client.Test
         public void TestCacheLogic()
         {
             var dynamicProxyBuilder = new Mock<IDynamicProxyBuilder>();
-            var processService = new Mock<IProcessService>();
+            var processService = new Mock<IServiceWrapper>();
             var mockTestService = new Mock<ITestService>();
 
             var service = new DynamicProxyCache(dynamicProxyBuilder.Object, processService.Object);
@@ -53,9 +53,9 @@ namespace UtilityDelta.Client.Test
 
         private class TestClass : ITestService
         {
-            private readonly IProcessService _processService;
+            private readonly IServiceWrapper _processService;
 
-            public TestClass(IProcessService service)
+            public TestClass(IServiceWrapper service)
             {
                 _processService = service;
             }

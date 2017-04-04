@@ -5,6 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UtilityDelta.Client.UI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid />
+        Title="MainWindow" Height="317.634" Width="525">
+    <Grid Margin="0,0,0,-1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="117,46,0,0" TextWrapping="Wrap" Text="{Binding Path=Username, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Username:" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top" Width="102"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="117,74,0,0" TextWrapping="Wrap" Text="{Binding Path=Password, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Width="102" RenderTransformOrigin="0.512,1.482"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="117,179,0,0" TextWrapping="Wrap" Text="{Binding Path=Value1, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <RadioButton Content="Add" HorizontalAlignment="Left" Margin="117,135,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=IsAdd, UpdateSourceTrigger=PropertyChanged}"/>
+        <RadioButton Content="Subtract" HorizontalAlignment="Left" Margin="117,159,0,0" VerticalAlignment="Top" IsChecked="{Binding Path=IsSubtract, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label Content="Let's do some processing on the server!" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top" Width="265"/>
+        <Label Content="Value 1:" HorizontalAlignment="Left" Margin="10,179,0,0" VerticalAlignment="Top" Width="102"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="117,210,0,0" TextWrapping="Wrap" Text="{Binding Path=Value2, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Value 2:" HorizontalAlignment="Left" Margin="10,210,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button Content="Let's do this!" HorizontalAlignment="Left" Margin="117,244,0,-28" VerticalAlignment="Top" Width="120" Height="30" Click="Button_Click"/>
+        <TextBox AcceptsReturn="True" HorizontalAlignment="Left" Height="259" Margin="257,15,0,-26" TextWrapping="Wrap" Text="{Binding Path=Results, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="241"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="117,15,0,0" TextWrapping="Wrap" Text="{Binding Path=Server, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Server:" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Width="102"/>
+
+    </Grid>
 </Window>

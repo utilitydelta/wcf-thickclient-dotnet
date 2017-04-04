@@ -9,9 +9,9 @@ namespace UtilityDelta.Client.ServiceLocator
 
         private readonly Dictionary<string, object> m_cache = new Dictionary<string, object>();
         private readonly IDynamicProxyBuilder m_dynamicProxyBuilder;
-        private readonly IProcessService m_processService;
+        private readonly IServiceWrapper m_processService;
 
-        public DynamicProxyCache(IDynamicProxyBuilder dynamicProxyBuilder, IProcessService processService)
+        public DynamicProxyCache(IDynamicProxyBuilder dynamicProxyBuilder, IServiceWrapper processService)
         {
             m_processService = processService;
             m_dynamicProxyBuilder = dynamicProxyBuilder;

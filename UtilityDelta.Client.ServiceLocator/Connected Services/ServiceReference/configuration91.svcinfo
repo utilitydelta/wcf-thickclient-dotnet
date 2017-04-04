@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="xrNz/XwILHYi54FEXSaUXtMyQlg=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="M2TpSJt7TVMg1P0k4ch+gUy5qkQ=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="CustomBinding_IService">
       <properties>
