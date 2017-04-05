@@ -1,8 +1,6 @@
 # wcf-thickclient-dotnet
 Ultra fast .NET n-tier thick client
 
-# WORK IN PROGRESS COME BACK LATER :)
-
 ## Goals
 Have you ever needed to build a thick client? Did you add an app server into the architecture? This repo shows you how to implement this. If you have control both the client and server then this is for you.
 
