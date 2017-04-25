@@ -81,7 +81,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="service.config" />
     <Content Include="log4net.config" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -125,6 +124,7 @@
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>
+          <EnableWcfTestClientForSVCDefaultValue>False</EnableWcfTestClientForSVCDefaultValue>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

@@ -32,7 +32,6 @@ namespace UtilityDelta.Server.Endpoint
             log4net.LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private const string UserNameCustomBinding = "UserNameCustomBinding";
-        private const string CertificateThumbprintSetting = "CertificateThumbprint";
         private const string Log4NetConfigSetting = "log4net_config";
 
         static Service()
@@ -53,13 +52,13 @@ namespace UtilityDelta.Server.Endpoint
         {
             Log4NetSetup();
 
-            var appServerUrl = Dns.GetHostEntry(Environment.MachineName).HostName;
+            var fullQualifiedMachineName = Dns.GetHostEntry(Environment.MachineName).HostName;
             var contractDesc = ContractDescription.GetContract(typeof(IService));
 
             var usernameEndpoint = new ServiceEndpoint(
                             contractDesc,
                             new CustomBinding(UserNameCustomBinding),
-                            new EndpointAddress($"{ServiceConstants.NettcpProtocol}{appServerUrl}{ServiceConstants.UsernameEndpoint}"));
+                            new EndpointAddress($"{ServiceConstants.NettcpProtocol}{fullQualifiedMachineName}{ServiceConstants.UsernameEndpoint}"));
 
             foreach (var op in usernameEndpoint.Contract.Operations)
             {
@@ -83,12 +82,10 @@ namespace UtilityDelta.Server.Endpoint
                 }
             });
 
-            //Make sure you give your IIS application pool user account access to the private key
-            var thumbprint = ConfigurationManager.AppSettings[CertificateThumbprintSetting];
-            Debug.Assert(!string.IsNullOrWhiteSpace(thumbprint), "Must specify thumbprint for SSL certificate.");
-
+            //Designed to use with a self-signed certificate issued by the machine the endpoint is hosted on
+            //Could change this to 'find by thumbprint' to find a specific certificate if required
             config.Credentials.ServiceCertificate.SetCertificate(
-                StoreLocation.LocalMachine, StoreName.My, X509FindType.FindByThumbprint, thumbprint);
+                StoreLocation.LocalMachine, StoreName.My, X509FindType.FindByIssuerName, fullQualifiedMachineName);
 
             config.Description.Behaviors.Add(new ServiceSecurityAuditBehavior
             {
